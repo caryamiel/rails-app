@@ -48,6 +48,7 @@ group :development, :test do
 
   gem 'bootstrap-sass', '~> 3.3.4'
 
+  gem 'searchkick', '~> 0.8.7' 
 
  
 end

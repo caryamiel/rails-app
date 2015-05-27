@@ -21,6 +21,10 @@
       <%= link_to "Movie Reviews", root_path, class: "navbar-brand" %>
     </div>
 
+          <div><%= form_tag search_movies_path, method: :get, class: "navbar-form navbar-left", role: "search" do %>
+          <%= text_field_tag :search, params[:search], class: "form-control" %>
+          <% end %>
+          </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <% if user_signed_in? %>

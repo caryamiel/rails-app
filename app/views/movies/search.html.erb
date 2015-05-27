@@ -1,0 +1,18 @@
+<div class="row">
+  <% @movies.each do |movie| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag movie.image.url(:medium), class: 'image'), movie %>
+      </div>
+      <div id=" buttons">
+          <center>
+            <% if current_user %>
+            <button class="btn btn-success"><%= link_to 'Edit', edit_movie_path(movie) %></button>
+            <button class="btn btn-warning"><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?'} %></button>
+            <% end %>
+          </center>
+      </div>  
+      <br>      
+    </div>
+  <% end %>
+</div>
