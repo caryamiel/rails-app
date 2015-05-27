@@ -5,4 +5,5 @@ class ApplicationController < ActionController::Base
 def create
   @user = User.create( user_params )
 end
+
 end
