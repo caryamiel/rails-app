@@ -42,9 +42,12 @@
         <%= link_to "Write Review", new_movie_review_path(@movie),class: "btn btn-success"%>
         
         <% @reviews.each do |review|%>
-        <div class= "reviews">
+        <div class= "container">
           <div class="star-rating" data-score= <%= review.rating %> ></div>
-          <p><%= review.comment %></p>
+          <p>
+           <%= image_tag review.user.avatar.url(:thumb) %>
+          <%= review.comment %>
+          </p>
           <p> <%= time_ago_in_words(review.created_at)  %> </p>
    
         <% if current_user ==  review.user %>
