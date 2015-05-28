@@ -31,23 +31,21 @@
               </tr>
             </tbody>
           </table>
-          <%= link_to "Write a review", new_movie_review_path(@movie)%>
+         
         </div>  
       </div>  
       <div class="col-md-7 col-md-offset-1">
         <h1 class="review.title"><%= @movie.title%></h1>
         <h4><%= @movie.description %></h4>
-
-       
         <%= link_to "Write Review", new_movie_review_path(@movie),class: "btn btn-success"%>
-        
+        <br><br>
         <% @reviews.each do |review|%>
-        <div class= "container">
+        <div class= "container col-md-9 well">
           <div class="star-rating" data-score= <%= review.rating %> ></div>
-          <p>
-           <%= image_tag review.user.avatar.url(:thumb) %>
-          <%= review.comment %>
-          </p>
+          
+           <div class="avatar"><%= image_tag review.user.avatar.url(:thumb) %></div>
+           <h4><%= review.user.email%></h4>
+           <em><%= review.comment %></em>
           <p> <%= time_ago_in_words(review.created_at)  %> </p>
    
         <% if current_user ==  review.user %>
@@ -55,8 +53,8 @@
         <% end %>
       </div>  
       <% end %>
-      
-    </div>        
+    </div> 
+
   </div>        
 </div>          
 <%= link_to 'Edit', edit_movie_path(@movie) %> |

@@ -50,6 +50,7 @@ group :development, :test do
 
   gem 'searchkick', '~> 0.8.7' 
 
+  gem 'omniauth', '~> 1.2.2'
  
 end
 
